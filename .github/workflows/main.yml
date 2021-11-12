@@ -28,6 +28,11 @@ jobs:
               title: '${{github.event.inputs.name}}',
               body: issueBody
               })
+      
+       - name: assignee
+         uses: actions/github-script@v5
+         with:
+          script: |
               github.rest.issues.addAssignees({
               owner: context.repo.owner,
               repo: context.repo.repo,
