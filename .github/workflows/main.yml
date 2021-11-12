@@ -1,10 +1,30 @@
 name: Issue Report
 
-on: [workflow_dispatch]
+on: 
+  workflow_dispatch:
+    inputs:
+      title:
+        required: true
+        description: 'please give the issue a title'
+        default: 
 
 jobs:
-  say_hello:
+  Create-Issue:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "g'day ${{github.job}}!"
+       - name: checkout repo
+         uses: actions/checkout@v2
+
+       - name: Issue Genesis
+         uses: actions/github-script@v5
+         with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+              const fs = require('fs')
+              const issueBody = fs.readFileSync(".github/ISSUE_TEMPLATES/issue-1.md", "utf8")
+              github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: ${{github.event.inputs.title}},
+              body: issueBody
+              });
