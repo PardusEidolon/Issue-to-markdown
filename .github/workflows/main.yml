@@ -18,7 +18,6 @@ jobs:
        - name: Issue Genesis
          uses: actions/github-script@v5
          with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
               const fs = require('fs')
               const issueBody = fs.readFileSync(".github/ISSUE_TEMPLATES/issue-1.md", "utf8")
@@ -28,7 +27,6 @@ jobs:
               title: '${{github.event.inputs.name}}',
               body: issueBody
               })
-
               octokit.rest.issues.addAssignees({
               owner: context.repo.owner,
               repo: context.repo.repo,
