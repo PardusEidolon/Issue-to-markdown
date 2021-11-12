@@ -28,14 +28,15 @@ jobs:
               body: issueBody
               })
       
-       - name: assignee
+       - name: comment
          uses: actions/github-script@v5
          with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-              github.rest.issues.addAssignees({
+              github.rest.issues.createComment({
+              issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: context.issue.number
+              body: '👋 this worked and all that time is now wasted'
               });
 
