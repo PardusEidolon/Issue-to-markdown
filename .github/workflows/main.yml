@@ -27,3 +27,15 @@ jobs:
               title: '${{github.event.inputs.name}}',
               body: issueBody
               });
+
+       - name: add Assignee
+         uses: actions/github-script@v5
+         with:
+          script: |
+              octokit.rest.issues.addAssignees({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number
+              assignees:'@PardusEidolon',
+              });
+
