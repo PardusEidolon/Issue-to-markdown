@@ -6,7 +6,7 @@ on:
       title:
         required: true
         description: 'please give the issue a title'
-        default: 
+        default: 'default issue title'
 
 jobs:
   Create-Issue:
@@ -20,9 +20,7 @@ jobs:
          with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-              const fs = require('fs')
-              const issueBody = fs.readFileSync(".github/ISSUE_TEMPLATES/issue-1.md", "utf8")
-              github.rest.issues.create({
+            github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: ${{github.event.inputs.title}},
