@@ -12,11 +12,11 @@ The bush began to shake. Brad couldn't see what was causing it to shake, but he 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit lacus erat, porttitor dignissim tortor fringilla ac. Integer molestie dolor tempor ligula volutpat pellentesque. Maecenas fringilla nunc porttitor enim placerat, eget sodales purus ultricies. Sed et gravida massa. Mauris ac dui eu eros blandit condimentum. Etiam quis dapibus felis. Phasellus sapien ante, condimentum pulvinar ipsum eu, dictum tristique tortor. In hac habitasse platea dictumst. Cras nec euismod neque. Cras volutpat, magna nec ornare euismod, mauris odio euismod diam, in convallis mi magna vel neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer sit amet gravida nulla.
 
 ## After-note
-- [] Integer pretium nulla id sem elementum, eget tincidunt velit gravida.
-- [] Fusce mattis leo vel pretium scelerisque.
-- [] Nulla faucibus nisi sed malesuada porta.
-- [] Donec et felis venenatis, lobortis ligula ultrices, condimentum sapien.
-- [] Fusce venenatis eros at ex facilisis efficitur.
+- [ ] Integer pretium nulla id sem elementum, eget tincidunt velit gravida.
+- [ ] Fusce mattis leo vel pretium scelerisque.
+- [ ] Nulla faucibus nisi sed malesuada porta.
+- [ ] Donec et felis venenatis, lobortis ligula ultrices, condimentum sapien.
+- [ ] Fusce venenatis eros at ex facilisis efficitur.
 ## Random List
 - Nunc viverra nulla sit amet commodo hendrerit.
 - Morbi non mauris non lorem facilisis interdum consectetur vel elit.
