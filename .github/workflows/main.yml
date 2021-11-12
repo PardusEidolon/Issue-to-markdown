@@ -2,11 +2,11 @@ name: Issue Report
 
 on:
   workflow_dispatch:
-#     inputs:
-#       name:
-#         description: 'please give the issue a title'
-#         required: true
-#         default: 'default issue title'
+    inputs:
+      name:
+        description: 'please give the issue a title'
+        required: true
+        default: 'default issue title'
 
 jobs:
   Create-Issue:
@@ -24,6 +24,6 @@ jobs:
               github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: 'default issue',
+              title: '${{github.events.inputs.name}}',
               body: issueBody
               });
