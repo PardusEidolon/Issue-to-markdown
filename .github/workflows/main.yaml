@@ -1,0 +1,15 @@
+name: Issue Report
+
+on: 
+  workflow_dispatch: 
+    inputs:
+      description: 'person to greet'
+      required: True
+      default: "say something please!"
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "g'day ${{github.event.inputs.name}}!"
