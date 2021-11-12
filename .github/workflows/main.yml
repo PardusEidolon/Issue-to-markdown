@@ -3,9 +3,10 @@ name: Issue Report
 on: 
   workflow_dispatch: 
     inputs:
-      description: 'person to greet'
-      required: True
-      default: "say something please!"
+      name:
+        description: 'person to greet'
+        required: true
+        default: 'say something please!'
 
 jobs:
   say_hello:
