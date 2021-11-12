@@ -1,12 +1,14 @@
 name: Issues
 
 on:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'Please give the issue a title'
-        required: true
-        default: 'Title goes here'
+  issues:
+    types: opened
+#   workflow_dispatch:
+#     inputs:
+#       name:
+#         description: 'Please give the issue a title'
+#         required: true
+#         default: 'Title goes here'
 
 jobs:
   Create-Issue:
@@ -15,19 +17,19 @@ jobs:
        - name: checkout repo
          uses: actions/checkout@v2
 
-       - name: Issue Genesis
-         uses: actions/github-script@v5
-         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}         
-          script: |
-              const fs = require('fs')
-              const issueBody = fs.readFileSync(".github/ISSUE_TEMPLATES/issue-1.md", "utf8")
-              github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: '${{github.event.inputs.name}}',
-              body: issueBody
-              });
+#        - name: Issue Genesis
+#          uses: actions/github-script@v5
+#          with:
+#           github-token: ${{ secrets.GITHUB_TOKEN }}         
+#           script: |
+#               const fs = require('fs')
+#               const issueBody = fs.readFileSync(".github/ISSUE_TEMPLATES/issue-1.md", "utf8")
+#               github.rest.issues.create({
+#               owner: context.repo.owner,
+#               repo: context.repo.repo,
+#               title: '${{github.event.inputs.name}}',
+#               body: issueBody
+#               });
       
        - name: comment
          uses: actions/github-script@v5
