@@ -18,6 +18,7 @@ jobs:
        - name: Issue Genesis
          uses: actions/github-script@v5
          with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}         
           script: |
               const fs = require('fs')
               const issueBody = fs.readFileSync(".github/ISSUE_TEMPLATES/issue-1.md", "utf8")
@@ -26,7 +27,7 @@ jobs:
               repo: context.repo.repo,
               title: '${{github.event.inputs.name}}',
               body: issueBody
-              })
+              });
       
        - name: comment
          uses: actions/github-script@v5
@@ -37,6 +38,6 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '👋 this worked and all that time is now wasted'
+              body: '👋 hi, this worked'
               });
 
