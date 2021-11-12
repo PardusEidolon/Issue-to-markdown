@@ -18,6 +18,7 @@ jobs:
        - name: Issue Genesis
          uses: actions/github-script@v5
          with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
               const fs = require('fs')
               const issueBody = fs.readFileSync(".github/ISSUE_TEMPLATES/issue-1.md", "utf8")
@@ -28,16 +29,10 @@ jobs:
               body: issueBody
               });
 
-       - name: add Assignee
-         uses: actions/github-script@v5
-         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
               octokit.rest.issues.addAssignees({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number
               assignees: ['PardusEidolon'
-                         ]
               });
 
