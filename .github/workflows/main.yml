@@ -1,12 +1,12 @@
-name: Issue Report
+name: ${{github.event.inputs.name}}
 
 on:
   workflow_dispatch:
     inputs:
       name:
-        description: 'please give the issue a title'
+        description: 'Please give the issue a title'
         required: true
-        default: 'default issue title'
+        default: 'Title goes here'
 
 jobs:
   Create-Issue:
