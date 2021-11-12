@@ -1,16 +1,10 @@
 name: Issue Report
 
-on: 
-  workflow_dispatch: 
-    inputs:
-      name:
-        description: 'person to greet'
-        required: true
-        default: 'say something please!'
+on: [workflow_dispatch]
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "g'day ${{github.event.inputs.name}}!"
+          echo "g'day ${{github.job}}!"
