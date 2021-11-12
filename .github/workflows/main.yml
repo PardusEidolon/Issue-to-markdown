@@ -31,11 +31,12 @@ jobs:
        - name: add Assignee
          uses: actions/github-script@v5
          with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
               octokit.rest.issues.addAssignees({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number
-              assignees: '@PardusEidolon'
+              assignees: 'PardusEidolon'
               });
 
