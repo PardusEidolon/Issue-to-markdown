@@ -1,4 +1,4 @@
-name: '${{github.event.inputs.name}}'
+name: Issues
 
 on:
   workflow_dispatch:
