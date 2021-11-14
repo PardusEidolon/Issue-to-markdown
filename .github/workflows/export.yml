@@ -13,7 +13,7 @@ jobs:
         with:
           repo: ${{github.repository}}
           org:  ${{github.repository.owner}}
-          repo-token: ${{secrets.GITHUB_TOKEN}}
+          # repo-token: ${{secrets.GITHUB_TOKEN}}
           out: issues
 
       - name: production artifacts
