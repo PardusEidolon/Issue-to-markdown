@@ -2,9 +2,6 @@
 name: My custom template
 about: Describe this issue template's purpose here.
 title: ''
-labels: bug
-assignees: PardusEidolon
-
 ---
 
 # Issue 1
