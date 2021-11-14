@@ -17,7 +17,7 @@ jobs:
           out: issues
 
       - name: production artifacts
-        uses: actions/upload-artifacts@v2
+        uses: actions/upload-artifact@v2
         with:
           name: issues
           path: "issues/*.md"
