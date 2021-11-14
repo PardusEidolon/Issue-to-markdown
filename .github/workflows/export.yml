@@ -5,15 +5,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo
-        uses: actions/checkout@v2
-
       - name: Export Issues
         uses: niteoweb/export-issues-action@v2
         with:
           repo: ${{github.repository}}
           org:  ${{github.repository.owner}}
-          # repo-token: ${{secrets.GITHUB_TOKEN}}
+          repo-token: ${{secrets.GITHUB_TOKEN}}
           out: issues
 
       - name: production artifacts
