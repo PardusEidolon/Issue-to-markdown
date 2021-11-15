@@ -18,10 +18,10 @@ on:
         required: True
         default: 'Backup all issues into issues.md'
       condition-one:
-        description: argument condition one
+        description: 'argument condition one'
         required: False
       condition-Two:
-        description: argument condition Two
+        description: 'argument condition Two'
         required: False
 
 
