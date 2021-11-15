@@ -1,11 +1,11 @@
 # Action to backup issues using gh2md, contributed by
 # https://github.com/0ut0fcontrol.
 # See https://github.com/mattduck/gh2md/issues/11.
-name: Issues2Markdown
-on:
-  schedule:
-    # every day
-    - cron: "0 0 * * *"
+name: Export
+on: workflow_dispatch
+#   schedule:
+#     # every day
+#     - cron: "0 0 * * *"
 jobs:
   build:
     runs-on: ubuntu-latest
