@@ -18,8 +18,8 @@ jobs:
       run: |
         pip3 install --user --upgrade setuptools
         pip3 install --user gh2md
-        $HOME/.local/bin/gh2md $GITHUB_REPOSITORY issues.md --idempotent
-        git add issues.md
+        $HOME/.local/bin/gh2md $GITHUB_REPOSITORY ./myissues/test-issues.md --idempotent --no-closed-issues
+        git add test-issues.md
       env:
         GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
