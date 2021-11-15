@@ -17,6 +17,12 @@ on:
         description: 'name of commit'
         required: True
         default: 'Backup all issues into issues.md'
+      condition-one:
+        description: argument condition one
+        required: False
+      condition-Two:
+        description: argument condition Two
+        required: False
 
 
 jobs:
@@ -33,7 +39,9 @@ jobs:
         pip3 install --user --upgrade setuptools
         pip3 install --user gh2md
         mkdir ${{ github.event.inputs.folder-name }}
-        $HOME/.local/bin/gh2md $GITHUB_REPOSITORY ./${{ github.event.inputs.folder-name }}/${{ github.event.inputs.file-name }}.md --no-closed-issues -I
+        $HOME/.local/bin/gh2md $GITHUB_REPOSITORY ./${{ github.event.inputs.folder-name }}/${{ github.event.inputs.file-name }}.md `
+        --${{ github.event.inputs.condition-one }} 
+        -- ${{ github.event.inputs.conditions-two }} `
       env:
         GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
