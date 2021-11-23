@@ -1,10 +1,9 @@
 name: Send Issue message to Discord
-on:
-  workflow_displatch
-  workflow_run:
-    workflows: ["Convert Issue to Markdown"]
-    types:
-      - completed
+on: workflow_dispatch
+#   workflow_run:
+#     workflows: ["Convert Issue to Markdown"]
+#     types:
+#       - completed
       
 jobs:
   on-success:
