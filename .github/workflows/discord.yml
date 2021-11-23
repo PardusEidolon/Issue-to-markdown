@@ -1,8 +1,9 @@
 name: Send Issue message to Discord
 on:
   workflow_run:
-    workflows: ["export"]
-    types: [completed]
+    workflows: ["Convert Issue to Markdown"]
+    types:
+      - completed
       
 jobs:
   on-success:
