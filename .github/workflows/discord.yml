@@ -2,9 +2,7 @@ name: Send Issue message to Discord
 on:
   workflow_run:
     workflows: ["export"]
-    branches: main
-    types:
-      - completed
+    types: [completed]
       
 jobs:
   on-success:
