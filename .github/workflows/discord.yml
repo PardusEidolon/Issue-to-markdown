@@ -15,5 +15,5 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@0.3.2
         with:
-          args: '{{github.sha}} I showed you my commit. please respond'
+          args: '${{env.github.sha}} I showed you my commit. please respond'
 
