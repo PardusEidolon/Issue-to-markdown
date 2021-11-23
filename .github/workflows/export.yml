@@ -5,10 +5,10 @@ name: Convert Issue to Markdown
 on: 
   workflow_dispatch:
     inputs:
-      folder-name:
-        description: 'name of the folder for markdown file'
-        required: False
-        default: 'offline-issues'
+#       folder-name:
+#         description: 'name of the folder for markdown file'
+#         required: False
+#         default: 'offline-issues'
       file-name:
         description: 'name of markdown file'
         required: False
@@ -17,12 +17,12 @@ on:
         description: 'name of commit'
         required: True
         default: 'Backup all issues into issues.md'
-      condition-one:
-        description: 'argument condition one'
-        required: False
-      condition-Two:
-        description: 'argument condition Two'
-        required: False
+#       condition-one:
+#         description: 'argument condition one'
+#         required: False
+#       condition-Two:
+#         description: 'argument condition Two'
+#         required: False
 
 
 jobs:
@@ -38,8 +38,8 @@ jobs:
       run: |
         pip3 install --user --upgrade setuptools
         pip3 install --user gh2md
-        mkdir ${{ github.event.inputs.folder-name }}
-        $HOME/.local/bin/gh2md $GITHUB_REPOSITORY ./${{ github.event.inputs.folder-name }}/${{ github.event.inputs.file-name }}.md ${{ github.event.inputs.condition-one }} ${{ github.event.inputs.conditions-two }}
+        mkdir issues-2-md
+        $HOME/.local/bin/gh2md $GITHUB_REPOSITORY ./issues-2-md/${{ github.event.inputs.file-name }}.md -I --no-closed-issues
       env:
         GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
